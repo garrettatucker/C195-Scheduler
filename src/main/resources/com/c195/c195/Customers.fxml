@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.c195.c195.controller.Customers">
+    <TableView fx:id="custTable" layoutX="16.0" layoutY="15.0" prefHeight="338.0" prefWidth="744.0">
+      <columns>
+          <TableColumn fx:id="custIdCol" prefWidth="90.0" text="Customer ID" />
+          <TableColumn fx:id="custNameCol" prefWidth="105.0" text="Customer Name" />
+          <TableColumn fx:id="custPhoneCol" prefWidth="104.0" text="Phone #" />
+          <TableColumn fx:id="custAddressCol" prefWidth="117.0" text="Address" />
+          <TableColumn fx:id="custPostalCol" prefWidth="127.0" text="Postal Code" />
+          <TableColumn fx:id="custFirstCol" prefWidth="124.0" text="State/Providence" />
+          <TableColumn fx:id="custCountryCol" prefWidth="124.0" text="Country" />
+          <TableColumn fx:id="custCreateDateCol" prefWidth="150.0" text="Create Date" />
+          <TableColumn fx:id="custCreatedByCol" prefWidth="100.0" text="Created By" />
+          <TableColumn fx:id="custLastUpdateCol" prefWidth="150.0" text="Last Update" />
+          <TableColumn fx:id="custLastUpdatedByCol" prefWidth="100.0" text="Last Updated By" />
+      </columns>
+    </TableView>
+    <GridPane layoutX="16.0" layoutY="363.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <Button fx:id="custDeleteLabel" mnemonicParsing="false" onAction="#actionCustDelete" prefWidth="75.0" text="Delete" GridPane.columnIndex="2" />
+        <Button fx:id="custAddLabel" mnemonicParsing="false" onAction="#actionCustAdd" prefWidth="75.0" text="Add" GridPane.columnIndex="1" />
+        <Button fx:id="custUpdateLabel" mnemonicParsing="false" onAction="#actionCustUpdate" prefWidth="75.0" text="Update" />
+    </GridPane>
+    <Button fx:id="backToMenu" layoutX="654.0" layoutY="446.0" mnemonicParsing="false" onAction="#backToMenu" text="Back to Menu" />
+</AnchorPane>

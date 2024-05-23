@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1170.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.c195.c195.controller.Appointments">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="500.0" prefWidth="1100.0">
+         <children>
+            <GridPane layoutX="14.0" layoutY="447.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.0" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="appointDeleteLabel" mnemonicParsing="false" onAction="#actionAppointDelete" prefWidth="75.0" text="Delete" GridPane.columnIndex="2" />
+                  <Button fx:id="appointAddLabel" mnemonicParsing="false" onAction="#actionAppointAdd" prefWidth="75.0" text="Add" GridPane.columnIndex="1" />
+                  <Button fx:id="appointUpdateLabel" mnemonicParsing="false" onAction="#actionAppointUpdate" prefWidth="75.0" text="Update" />
+               </children>
+            </GridPane>
+            <TableView fx:id="appointTable" layoutX="50.0" layoutY="48.0" prefHeight="386.0" prefWidth="1066.0">
+               <columns>
+                  <TableColumn fx:id="appointIdCol" prefWidth="102.0" text="Appointment ID" />
+                  <TableColumn fx:id="appointTitleCol" prefWidth="64.0" text="Title" />
+                  <TableColumn fx:id="appointDescriptionCol" prefWidth="118.0" text="Description" />
+                  <TableColumn fx:id="appointLocationCol" prefWidth="126.0" text="Location" />
+                  <TableColumn fx:id="appointContactCol" prefWidth="117.0" text="Contact" />
+                  <TableColumn fx:id="appointTypeCol" prefWidth="90.0" text="Type" />
+                  <TableColumn fx:id="appointDateCol" prefWidth="122.0" text="Start Date/Time" />
+                  <TableColumn fx:id="appointEndDateCol" prefWidth="126.0" text="End Date/Time" />
+                  <TableColumn fx:id="appointCustNameCol" prefWidth="98.0" text="Customer Name" />
+                  <TableColumn fx:id="appointUserNameCol" prefWidth="82.0" text="User Name" />
+                  <TableColumn fx:id="appointCreateDateCol" prefWidth="82.0" text="Create Date" />
+                  <TableColumn fx:id="appointCreatedByCol" prefWidth="82.0" text="Created By" />
+                  <TableColumn fx:id="appointLastUpdateCol" prefWidth="82.0" text="Last Update" />
+                  <TableColumn fx:id="appointLastUpdatedByCol" prefWidth="82.0" text="Last Updated By" />
+               </columns>
+            </TableView>
+            <RadioButton layoutX="358.0" layoutY="19.0" mnemonicParsing="false" onAction="#allAppointments" selected="true" text="All Appointments">
+               <toggleGroup>
+                  <ToggleGroup fx:id="appointmentView" />
+               </toggleGroup></RadioButton>
+            <RadioButton layoutX="640.0" layoutY="18.0" mnemonicParsing="false" onAction="#monthlyAppointments" text="Month" toggleGroup="$appointmentView" />
+            <RadioButton layoutX="532.0" layoutY="18.0" mnemonicParsing="false" onAction="#weeklyAppointments" text="Week" toggleGroup="$appointmentView" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="backToMenu" layoutX="992.0" layoutY="556.0" mnemonicParsing="false" onAction="#backToMenu" text="Back to Menu" />
+   </children>
+</AnchorPane>
