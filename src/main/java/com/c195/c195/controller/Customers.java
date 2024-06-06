@@ -22,7 +22,8 @@ import java.util.Optional;
 
 
 public class Customers {
-
+    @FXML
+    public TextField custSearchTextField;
     @FXML
     private TableView<Customer> custTable;
 
@@ -89,6 +90,9 @@ public class Customers {
 
         // Populate the table
         populateTable();
+
+        // Add listener to the search text field
+        custSearchTextField.textProperty().addListener((observable, oldValue, newValue) -> filterCustomerList(newValue));
     }
 
     private void populateTable() {
@@ -130,6 +134,21 @@ public class Customers {
             e.printStackTrace();
         }
     }
+
+    private void filterCustomerList(String filterText) {
+        if (filterText == null || filterText.isEmpty()) {
+            custTable.setItems(customersData);
+        } else {
+            ObservableList<Customer> filteredList = FXCollections.observableArrayList();
+            for (Customer customer : customersData) {
+                if (String.valueOf(customer.getId()).contains(filterText) || customer.getName().toLowerCase().contains(filterText.toLowerCase())) {
+                    filteredList.add(customer);
+                }
+            }
+            custTable.setItems(filteredList);
+        }
+    }
+
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
